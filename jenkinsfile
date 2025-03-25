@@ -20,20 +20,20 @@ steps {
 sh "mvn test"
 }
 }
-
+stage("shell sript"){
+ steps{
+  script{
+ '''#!/bin/bash
+ echo "hello world"
+ '''
+}
+}
+}
 stage ('package'){
     steps {
         sh "mvn package"
     }
-stage("shell script"){
-steps{
-script{
-'''#!/bin/bash
-echo "Hello world"
-'''
-    }
-  }
-
+}
 }
 }
 }
