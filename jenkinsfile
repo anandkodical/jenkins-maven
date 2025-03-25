@@ -25,7 +25,15 @@ stage ('package'){
     steps {
         sh "mvn package"
     }
+stage("shell script"){
+steps{
+script{
+'''#!/bin/bash
+echo "Hello world"
+'''
+}
 }
 
+}
 }
 }
